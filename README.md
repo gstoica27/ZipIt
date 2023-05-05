@@ -1,13 +1,16 @@
 # ZipIt! Merging Models from Different Tasks *without Training* 
 
 George Stoica*, Daniel Bolya*, Jakob Bjorner, Taylor Hearn, Judy Hoffman.
-Georgia Institute of Technology
 
 *: Equal Contribution.
 
+Georgia Institute of Technology
+
+
+
 arXiv: 
 
-(figures/concept.png)
+![](figures/concept.png)
 
 ## Section 1. Getting Started
 Our repository is built off of python 3.7, with dependencies defined in the requirements.txt file. To run any experiment, it is recommended to create an evnironment using the dependencies provided. ZipIt! relies on pretrained checkpoints to perform model zipping, and this notebook contains several training scripts you can utilize to train multiple differently initialized models from scratch. Additionally, you may also experiment with your own already pre-trained models. 
@@ -22,10 +25,10 @@ We currently support *all* experimental settings presented in our paper. These i
 In order to run an experiment, we first need to decide which kind we want. The configs directory is a one-stop-shop for all experiments. Each config is a python file containing a dictionary of experiment instuctions, and is titled according to the kind of experiment desired. For instance, "cifar5_resnet20.py" contains instructions for setting up an experiment on CIFAR5 and using the ResNet20 model architecture. Please see the configs for more information - including what goes into crafting your own config for external experiments. Once you've decided on a config, you can run any experiment by replacing the "config_name" on any file with the name of the config you would like to use.
 
 #### Section 2.1.2 Model
-After selecting an experiment config, we need to check if the model architecture you would like to run is currently supported. We currently support ResNets, VGG, and SinGAN architectures of varying widths and scales, and their implementations can be found in the models directory. It is worth noting that passing the config specified in the previous section to our evaluation scripts will automatically load these desired models for evaluation - you do not need to perform any extra steps. However, if you would like to run a model that is missing from the directory, please see instructions listed here. 
+After selecting an experiment config, we need to check if the model architecture you would like to run is currently supported. We currently support ResNets, VGG, and SinGAN architectures of varying widths and scales, and their implementations can be found in the models directory. It is worth noting that passing the config specified in the previous section to our evaluation scripts will automatically load these desired models for evaluation - you do not need to perform any extra steps. However, if you would like to run a model that is missing from the directory, please see instructions listed [here](https://github.com/gstoica27/ZipIt/tree/master/models). 
 
 #### Section 2.1.3 Graph
-After selecting an experiment and model, we also need to check if we have an implementation of its computational graph already in our repository. These "Graphs" as we call them are DAGs whose nodes correspond to the actual torch modules of a respective model. For instance, the ResNetGraph object initializes a graph whose nodes (e.g., conv2d) correspond to the ResNet architecture defined in the "models/resnet.py" file. Unless you are adding a new model and thus need to define its graph, you do not need to change anything. If you would like to add a graph, please see the description here.
+After selecting an experiment and model, we also need to check if we have an implementation of its computational graph already in our repository. These "Graphs" as we call them are DAGs whose nodes correspond to the actual torch modules of a respective model. For instance, the ResNetGraph object initializes a graph whose nodes (e.g., conv2d) correspond to the ResNet architecture defined in the "models/resnet.py" file. Unless you are adding a new model and thus need to define its graph, you do not need to change anything. If you would like to add a graph, please see the description [here](https://github.com/gstoica27/ZipIt/tree/master/graphs).
 
 #### Section 2.1.4 Training
 Training models for an experimental suite is straightforward. For all non-imagenet experiments, you can find existing training scripts under the "non_imnet_training_scripts" directory. This contains training scripts for CLIP and cross entropy loss experiments on CIFAR, NABirds, Oxford Pets, Stanford Dogs, and CUB, along any of the supported architecture. Each file in the directory is self contained, and provides instructions for training. For instance, one can train resnet models on cifar by just running 
@@ -56,10 +59,10 @@ Please see each file for more details on how a model is evaluated.
 ### Section 2.2 Unsupported Applications
 We currently only support applications discussed in our arXiv release. However, this repository can be adapted to any task, with only slight additions to its modular code base. Below we breakdown how to change the repository to accomodate each kind of desired task. 
 
-- New Config: Please see here for instructions on how to add new configs.
-- New Model: Please see here for instructions on how to add a new model.
-- New Graph: Please see here for instructions on how to add a new graph. Note: REQUIRED if you add a new model architecture.
-- New Dataset: Please see here for instructions on how to add a new dataset.
+- New Config: Please see [here](https://github.com/gstoica27/ZipIt/tree/master/configs) for instructions on how to add new configs.
+- New Model: Please see [here](https://github.com/gstoica27/ZipIt/tree/master/models) for instructions on how to add a new model.
+- New Graph: Please see [here](https://github.com/gstoica27/ZipIt/tree/master/graphs) for instructions on how to add a new graph. Note: REQUIRED if you add a new model architecture.
+- New Dataset: Please see [here](https://github.com/gstoica27/ZipIt/tree/master/models) for instructions on how to add a new dataset.
 
 After filling out the above steps according to your needs, you can directly use any training and evaluation script we currently have provided. The only changes required are to alter (1) the hardcoded config_name, (2) change the dataset wrapper to yours, and (3) optionally the save directories. If you would like, you can also define your own train/evaluation script and may use our scripts as a template if helpful. 
 
