@@ -14,6 +14,15 @@ arXiv: https://arxiv.org/abs/2305.03053
 ## Section 1. Getting Started
 Our repository is built off of python 3.7, with dependencies defined in the requirements.txt file. To run any experiment, it is recommended to create an evnironment using the dependencies provided. ZipIt! relies on pretrained checkpoints to perform model zipping, and this notebook contains several training scripts you can utilize to train multiple differently initialized models from scratch. Additionally, you may also experiment with your own already pre-trained models. 
 
+### Section 1.1 Installation
+Create a virtual environment and install the dependencies:
+```bash
+conda create -n zipit python=3.7
+conda activate zipit
+pip install torch torchvision torchaudio
+pip install -r requirements.txt
+```
+
 ## Section 2. Experiment Pipeline
 This repository facilitates zipping arbitrary pretrained models from different initializations and different data together, while retaining performance in each's task. For most applications our repository can be directly used as is, without any additional coding required. However, it can also be easily adapted to many use cases by simply adding to a few files in its structure (more information below). 
 
