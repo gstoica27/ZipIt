@@ -1,15 +1,19 @@
 # ZipIt! Merging Models from Different Tasks *without Training* 
 
-George Stoica*, Daniel Bolya*, Jakob Bjorner, Taylor Hearn, Judy Hoffman.
+This is the official implementation of **ZipIt!** from our paper:
 
-*: Equal Contribution.
+**[ZipIt! Merging Models from Different Tasks without Training](https://arxiv.org/abs/2305.03053)**  
+[George Stoica](https://gstoica27.github.io/)\*, 
+[Daniel Bolya](https://dbolya.github.io)\*, 
+[Jakob Bjorner](https://www.linkedin.com/in/jakob-bjorner/), 
+[Taylor Hearn](https://www.linkedin.com/in/taylor-hearn-521175128/), 
+[Judy Hoffman](https://faculty.cc.gatech.edu/~judy/)  
+Georgia Institute of Technology  
+_[GitHub](https://github.com/gstoica27/ZipIt)_ | _[arXiv](https://arxiv.org/abs/2305.03053)_ | _[BibTeX](#citation)_
 
-Georgia Institute of Technology
+\*: Equal Contribution.  
 
-
-arXiv: https://arxiv.org/abs/2305.03053
-
-![](figures/concept.png)
+![ZipIt! Concept Figure](figures/concept.png)
 
 ## Section 1. Getting Started
 Our repository is built off of python 3.7, with dependencies defined in the requirements.txt file. To run any experiment, it is recommended to create an evnironment using the dependencies provided. ZipIt! relies on pretrained checkpoints to perform model zipping, and this notebook contains several training scripts you can utilize to train multiple differently initialized models from scratch. Additionally, you may also experiment with your own already pre-trained models. 
@@ -73,4 +77,17 @@ We currently only support applications discussed in our arXiv release. However, 
 - New Dataset: Please see [here](https://github.com/gstoica27/ZipIt/tree/master/models) for instructions on how to add a new dataset.
 
 After filling out the above steps according to your needs, you can directly use any training and evaluation script we currently have provided. The only changes required are to alter (1) the hardcoded config_name, (2) change the dataset wrapper to yours, and (3) optionally the save directories. If you would like, you can also define your own train/evaluation script and may use our scripts as a template if helpful. 
+
+
+## Citation
+
+If you use ZipIt! or this codebase in your work, please cite:
+```
+@article{stoica2023zipit,
+  title={ZipIt! Merging Models from Different Tasks without Training},
+  author={Stoica, George and Bolya, Daniel and Bjorner, Jakob and Hearn, Taylor and Hoffman, Judy},
+  journal={arXiv},
+  year={2023}
+}
+```
 
