@@ -46,7 +46,7 @@ $bash: python -m non_imnet_training_scripts.cifar_resnet_training
 Training is relatively fast, and can train 10 ResNet20 models with width 16 in ~12 hours on an A40. Each script automatically handles model checkpoint saving. 
 Note: We used the FFCV imagenet [repository](https://github.com/libffcv/ffcv-imagenet) to train our imagenet models. Similarly, we used the SinGAN [repository](https://github.com/kligvasser/SinGAN) to train our SinGAN models.
 
-#### Secion 2.1.5 Evaluation
+#### Section 2.1.5 Evaluation
 Any supported experimental suite can be run in one of our evaluation_scripts directories. For non-imagenet experiments, please use "non_imnet_evaluation_scripts", otherwise please use "imnet_evaluation_scripts". Here we provide a list of each script corresponding to the kind of experiment it runs. All scripts record the Joint, Task Avg, and Per-Task performance for each model and write the results (+ other attributes) to a csv file.
 - base_model_concept_merging.py: This script runs each pretrained model on the setting specified by the config, and the ensemble of all models. 
 - auxiliary_concept_merging.py: This script merges each pretrained model along our implemented baseline matching functions (e.g., permute and weight avg) from the config and evaluates the result. 
