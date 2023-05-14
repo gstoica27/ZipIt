@@ -69,7 +69,7 @@ Please see each file for more details on how a model is evaluated.
 
 
 ### Section 2.2 Unsupported Applications
-We currently only support applications discussed in our arXiv release. However, this repository can be adapted to any task, with only slight additions to its modular code base. Below we breakdown how to change the repository to accomodate each kind of desired task. 
+We currently only support applications discussed in our arXiv release. However, this repository can be adapted to any task, with only slight additions to its modular code base. Below we breakdown how to change the repository to accommodate each kind of desired task. 
 
 - New Config: Please see [here](https://github.com/gstoica27/ZipIt/tree/master/configs) for instructions on how to add new configs.
 - New Model: Please see [here](https://github.com/gstoica27/ZipIt/tree/master/models) for instructions on how to add a new model.
