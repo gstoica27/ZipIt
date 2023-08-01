@@ -337,7 +337,7 @@ def train_cliphead(model, train_loader, test_loader, class_vectors, remap_class_
         model: trained cliphead model
         train_acc: training accuracy
     """
-    optimizer = SGD(model.parameters(), lr=0.003, momentum=0.9, weight_decay=5e-4)
+    optimizer = SGD(model.parameters(), lr=0.4, momentum=0.9, weight_decay=5e-4)
     ne_iters = len(train_loader)
     lr_schedule = np.interp(np.arange(1+epochs*ne_iters), [0, 5*ne_iters, epochs*ne_iters], [0, 1, 0])
     scheduler = lr_scheduler.LambdaLR(optimizer, lr_schedule.__getitem__)
