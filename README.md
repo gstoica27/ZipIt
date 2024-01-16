@@ -2,7 +2,7 @@
 
 This is the official implementation of **ZipIt!** from our paper:
 
-**ZipIt! Merging Models from Different Tasks without Training [V2 @ ICLR 2024](https://openreview.net/forum?id=LEYUkvdUhq&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DICLR.cc%2F2024%2FConference%2FAuthors%23your-submissions)), [V1 @ arXiv](https://arxiv.org/abs/2305.03053)**  
+**[ZipIt! Merging Models from Different Tasks without Training](https://arxiv.org/abs/2305.03053)**  
 [George Stoica](https://gstoica27.github.io/)\*, 
 [Daniel Bolya](https://dbolya.github.io)\*, 
 [Jakob Bjorner](https://www.linkedin.com/in/jakob-bjorner/), 
